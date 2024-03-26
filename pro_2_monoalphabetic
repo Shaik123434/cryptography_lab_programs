@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char plaintext[] = "abcdefghijklmnopqrstuvwxyz";
+    char ciphertext[] = "zyxwvutsrqponmlkjihgfedcba";
+    char message[100];
+    int i, j;
+    printf("Enter a message: ");
+    gets(message);
+    for(i = 0; i < strlen(message); i++) {
+        if(message[i] == ' ') {
+            printf(" ");
+        } else {
+            for(j = 0; j < strlen(plaintext); j++) {
+                if(message[i] == plaintext[j]) {
+                    printf("%c", ciphertext[j]);
+                    break;
+                }
+            }
+        }
+    }
+
+    return 0;
+}
